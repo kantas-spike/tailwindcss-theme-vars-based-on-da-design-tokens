@@ -6,6 +6,11 @@
     "dist/*.css"
   ],
   "type": "module",
+  "scripts": {
+    "build_tokens": "node style-dictionary/transform.js",
+    "build_theme": "node tool/gen.js",
+    "build": "npm run build_tokens && npm run build_theme"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
