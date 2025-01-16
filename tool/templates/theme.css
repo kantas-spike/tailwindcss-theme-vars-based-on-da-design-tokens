@@ -1,0 +1,85 @@
+@theme {
+    /* b/w colors */
+    {%- for color in theme['bw-colors'] %}
+    --color-{{ color }}: var(--tokens-color-neutral-{{ color }});
+    {%- endfor %}
+
+    /* primitive colors */
+    {%- for color in theme['primitive-colors']['names'] %}
+        {%- for level in theme['primitive-colors']['levels'] %}
+    --color-{{ color }}-{{ level }}: var(--tokens-color-primitive-{{ color }}-{{level}});
+        {%- endfor %}
+    {%- endfor %}
+
+    /* neutral colors */
+    {%- for color in theme['neutral-colors']['names'] %}
+        {%- for level in theme['neutral-colors']['levels'] %}
+    --color-{{ color }}-{{ level }}: var(--tokens-color-neutral-{{ color }}-{{level}});
+        {%- endfor %}
+    {%- endfor %}
+
+    /* semantic colors */
+    {%- for color in theme['semantic-colors']['names'] %}
+        {%- for level in theme['semantic-colors']['levels'] %}
+    --color-{{ color }}-{{ level }}: var(--tokens-color-semantic-{{ color }}-{{level}});
+        {%- endfor %}
+    {%- endfor %}
+
+    /* addon colors */
+    {%- for color in theme['addon-colors'] %}
+    --color-{{ color['name'] }}: var(--tokens-color-{{ color['var-suffix'] }});
+    {%- endfor %}
+
+    /* text styles */
+    {%- for font in theme['text-styles'] %}
+    /*  {{font.name}} */
+    --text-{{ font.name }}: var(--tokens-font-size-{{ font.size }});
+    --text-{{ font.name }}--font-weight: var(--tokens-font-weight-{{ font.weight }});
+    --text-{{ font.name }}--line-height: var(--tokens-line-height-{{ font.height }});
+    {%- if font.spacing %}
+    --text-{{ font.name }}--letter-spacing: {{ font.spacing }};
+    {%- else -%}
+    {%- endif -%}
+    {% endfor %}
+
+    /* font families */
+    {%- for f in theme['font-families'] %}
+    --font-{{f}}: var(--tokens-font-family-{{ f }});
+    {%- endfor %}
+
+    /* font weight */
+    {%- for w in theme['font-weight'] %}
+    --font-weight-{{w}}: var(--tokens-font-weight-{{ w }});
+    {%- endfor %}
+
+    /* line height */
+    {%- for h in theme['line-height'] %}
+    --leading-{{h}}: var(--tokens-line-height-{{ h }});
+    {%- endfor %}
+
+    /* border radius */
+    {%- for r in theme['border-radius'] %}
+    --radius-{{r}}: var(--tokens-border-radius-{{ r }});
+    {%- endfor %}
+
+    /* screens */
+    {%- for info in theme['screens'] %}
+    --breakpoint-{{info.name}}: {{info.value}};
+    {%- endfor %}
+
+    /* list style types */
+    {%- for info in theme['list-style-types'] %}
+    --list-style-type-{{info.name}}: {{info.value}};
+    {%- endfor %}
+
+    /* aspect ratio */
+    {%- for info in theme['aspect-ratio'] %}
+    --aspect-{{info.name}}: {{info.value}};
+    {%- endfor %}
+
+    /* shadow styles */
+    {%- for v in theme['shadow-styles'] %}
+    --shadow-{{v}}: var(--tokens-elevation-{{ v }});
+    {%- endfor %}
+
+}
