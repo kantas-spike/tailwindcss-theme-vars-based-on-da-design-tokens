@@ -2,6 +2,7 @@
   "name": "tailwindcss-theme-vars-based-on-da-design-tokens",
   "version": "1.0.0",
   "description": "[digital-go-jp/design-tokens: デジタル庁デザインシステムのデザイントークン](https://github.com/digital-go-jp/design-tokens)をベースにした Tailwind CSS v4.0 向けの テーマCSS変数を生成するツール",
+  "style": "index.css",
   "files": [
     "dist/*.css"
   ],
