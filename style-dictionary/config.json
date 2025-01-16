@@ -1,0 +1,23 @@
+{
+  "source": ["design-tokens/figma/tokens.json"],
+  "platforms": {
+    "css": {
+      "preprocessors": ["tokens-studio"],
+      "transformGroup": "tokens-studio",
+      "transforms": ["size/pxToRem", "shadow/css/shorthand", "name/kebab"],
+      "buildPath": "dist/",
+      "prefix": "tokens",
+      "files": [
+        {
+          "destination": "tokens.css",
+          "format": "css/variables",
+          "filter": "tokens-filter",
+          "options": {
+            "outputReferences": true,
+            "selector": "@theme"
+          }
+        }
+      ]
+    }
+  }
+}
