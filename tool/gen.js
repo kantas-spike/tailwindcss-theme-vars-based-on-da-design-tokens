@@ -13,7 +13,7 @@ if (!fs.existsSync(dest_dir)) {
 }
 
 /* console.log(theme) */
-nunjucks.configure("tool/templates", { autoescape: true });
+nunjucks.configure("tool/templates", { autoescape: false });
 nunjucks.render("theme.css", { theme }, (err, res) => {
   //console.log(res);
   fs.writeFileSync(dest_path, res);
