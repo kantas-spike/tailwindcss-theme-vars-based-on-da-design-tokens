@@ -452,9 +452,9 @@
     --list-style-type-square: square;
 
     /* aspect ratio */
-    --aspect-1/1: 1 / 1;
-    --aspect-3/2: 3 / 2;
-    --aspect-16/9: 16 / 9;
+    --aspect-1\/1: 1 / 1;
+    --aspect-3\/2: 3 / 2;
+    --aspect-16\/9: 16 / 9;
 
     /* shadow styles */
     --shadow-1: var(--tokens-elevation-1);
